@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Mulish:ital,wght@1,1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    font-family: '', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header section */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    z-index: 1000;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.navbar:hover {
+    background-color: #222; /* Darken the background on hover */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold; /* Make the logo bold */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    font-size: 16px; /* Decrease font size to make the bar smaller */
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+    position: relative;
+}
+
+
+.nav-menu a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #98bf64; /* Highlight color */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: right;
+    transition: transform 0.3s; /* Smooth transition for underline */
+}
+
+.nav-menu a:hover:before {
+    transform: scaleX(1); /* Highlight on hover */
+    transform-origin: left;
+}
+
+/* Smooth transition for the underline */
+.nav-menu a:before {
+    transition: transform 0.3s ease; /* Use ease for a smoother transition */
+}
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Add some padding as needed */
+}
+
+.logo img {
+    width: 50px; /* Adjust the width as needed to make the image smaller */
+    height: auto; /* Maintain aspect ratio */
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Your existing styles for the navigation bar */
+}
+
+/* End Navigation Bar Styles */
+
+/* Hero Section */
+#hero {
+    background-image: url(./img/headerbg4.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+#hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+#hero h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+    animation-delay: 3s;
+}
+#hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #98bf64;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .3s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #98bf64;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#hero .cta:hover{
+    color: white;
+    background-color: #98bf64;
+}
+/* End Hero Section */
+
+/* About Section */
+
+#about .about {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 150px;
+    
+}
+.about-item img {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+    min-width: 530px;
+ 
+}
+#about .about-title {
+    font-size: 4rem;
+    font-weight: 7000;
+    color: black;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;  
+}
+#about .about-title span {
+    color: #98bf64;
+}
+#about .about-top p{
+    font-size: 1.7rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+/* End About Section */
+
+/* Gallery Section */
+
+#gallery .container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#gallery .container h1 {
+    font-size: 50px;
+    font-weight: 7000;
+    padding: 15px;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+}
+#gallery .container .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+#gallery .container .image-container .image{
+    height: 250px;
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+#gallery .container .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+#gallery .container .image-container .image:hover img{
+    transform: scale(1.1);
+}
+#gallery .container .popup-image{
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(0,0,0,.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+#gallery .container .popup-image span{
+    position: absolute;
+    top: 0; right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+#gallery .container .popup-image img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the opacity here */
+    z-index: 100;
+}
+@media (max-width: 768px){
+    #gallery .container .popup-image img{
+        width: 95%;
+
+    }
+}
+/* End Gallery Section */
+
+/* Contacts Section */
+#contact {
+    background-color: #222222;
+    padding: 20px 10px;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 70vh;
+}
+
+.contact-info {
+    color: white;
+    flex: 1;
+    padding: 20px;
+    background-color: #222222;
+    margin-right: 20px;
+    max-width: 45%;
+}
+.contact .contact-info {
+    flex: 1;
+    padding: 125px;
+    background-color: #222222;
+    margin-right: 20px;
+    margin-bottom: 20px; /* Add margin to create spacing between sections */
+}
+
+.contact-info h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-form {
+    color: white;
+    flex: 1;
+    padding: 20px;
+    background-color: #222222;
+    max-width: 45%;
+    
+}
+.contact .contact-form {
+    flex: 1;
+    padding: 150px;
+    background-color: #222222;
+    margin-bottom: 20px; 
+}
+
+
+.contact-form h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #98bf64;
+    color: #f2f2f2;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #77a347;
+}
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column; 
+    }
+}
+.contact-info,
+.contact-form {
+        max-width: 100%; 
+        padding: 20px; 
+    }
+
+    .contact-info {
+        margin-bottom: 10px;  
+    }
+    
+    .contact-form {
+        margin-bottom: 10px; 
+    }
+    
+    .contact-info li {
+        font-size: 1.5rem; 
+        max-width: 100%; 
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem; 
+    }
+
+/* End Contacts Section */
+
+/* FOOTER */
+footer {
+    background-color: #222222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer h1 {
+        font-size: 24px; /* Adjust the font size as needed */
+        margin: 0; /* Remove any default margin */
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vh;
+}
+.footer .social-icons a img {
+    width: 43px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    margin: 5px; /* Add margin for spacing between icons */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+
+.facebook-icon:hover {
+    opacity: 0.7;
+    color: #1877f2; /* Change the color for Facebook on hover */
+}
+
+.twitter-icon:hover {
+    opacity: 0.7;
+    color: #1da1f2; /* Change the color for Twitter on hover */
+}
+
+.instagram-icon:hover {
+    opacity: 0.7;
+    color: #bc2a8d; /* Change the color for Instagram on hover */
+}
+/* END FOOTER */
+
+
+/* Keyframes */
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+    
+/* End Keyframes */
+@media only screen and (min-width: 1200px) {
+    #header .hamburger{
+        display: none;
+    }
+#header .nav-list ul{
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+}
+
+}

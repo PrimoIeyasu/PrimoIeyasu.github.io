@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
+
+    <title>CVSU Bacoor</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo"><a href="#hero"><img src="img/logo.png" alt="CVSU Logo"></a></div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Header -->
+
+
+
+   <!-- Hero Section -->
+   <section id="hero">
+    <div class="hero container">
+        <div>
+           <h1>Cavite State <span></span></h1>
+           <h1>University - <span></span></h1>
+           <h1>Bacoor Campus <span></span></h1>
+           <a href="#" type="button" class="cta">Get Started</a>
+        </div>
+    </div>
+   </section>
+   <!-- End Hero Section -->
+
+   <!-- About Section -->
+   <section id="about">
+        <div class="about container">
+            <div class="about-top">
+                <h1 class="about-title">About us and our History</h1>
+                <p>The University offers about 100 curricular programs at the undergraduate and graduate levels. It comprises 1,200 faculty and staff members from all schools and more than 25,000 students. In compliance with the Expanded Tertiary Education and Accreditation Program (ETEEAP), the University is also permitted to certify and bestow the relevant academic degrees. The National Center for Research and Development for Coffee and Urban Agriculture has been designated by the Department of Agriculture and is accredited by TESDA as a Trade and Testing Venue. As part of its mission to become "the premier University in historic Cavite recognized for excellence in the development of globally competitive and morally upright individuals," CvSU also houses the Southern Tagalog Agriculture Research and Development Consortium (STARDEC), the Affiliated Renewable Energy Center for Region IV-A, and the Regional ICT Center for Region IV-A. </p>
+            </div>
+            
+            <div class="about-bottom"><div class="about-item">
+                <img src="./img/mnv.png">
+             </div>
+            </div>
+               
+        </div>
+   </section>
+   <!-- End About Section -->
+
+   <!-- Gallery Section -->
+   <section id="gallery">
+    
+        <div class="container">
+
+            <h1>Gallery</h1>
+
+            <div class="image-container">
+                <div class="image"><img src="img/entrance.jpg" alt=""></div>
+                <div class="image"><img src="img/mainbuilding.jpeg" alt=""></div>
+                <div class="image"><img src="img/newbuilding.jpeg" alt=""></div>
+                <div class="image"><img src="img/students.jpg" alt=""></div>
+                <div class="image"><img src="img/students3.jpg" alt=""></div>
+                <div class="image"><img src="img/students5.jpg" alt=""></div>
+                <div class="image"><img src="img/students6.jpg" alt=""></div>
+                <div class="image"><img src="img/students7.jpg" alt=""></div>
+                <div class="image"><img src="img/students8.jpg" alt=""></div>
+                <div class="image"><img src="img/students9.jpg" alt=""></div>
+                <div class="image"><img src="img/students10.jpg" alt=""></div>
+                <div class="image"><img src="img/students11.jpg" alt=""></div>
+                <div class="image"><img src="img/students12.jpg" alt=""></div>
+                <div class="image"><img src="img/students13.jpg" alt=""></div>
+                <div class="image"><img src="img/students14.jpg" alt=""></div>
+                <div class="image"><img src="img/students15.jpg" alt=""></div>
+                <div class="image"><img src="img/students16.jpg" alt=""></div>
+
+            </div>
+            <div class="popup-image">
+                <div class="overlay"></div> 
+                <span>&times;</span>
+                <img src="img/entrance.jpg" alt="">
+            </div>
+        </div>
+        
+        <script>
+           document.querySelectorAll('.image-container img').forEach(image => {
+                image.onclick = () => {
+                    const popupImage = document.querySelector('.popup-image');
+                    const overlay = document.querySelector('.overlay');
+
+                    popupImage.style.display = 'block';
+                    overlay.style.display = 'block';
+
+                    popupImage.querySelector('img').src = image.getAttribute('src');
+                }
+            });
+
+            const overlay = document.querySelector('.overlay');
+            const popupImage = document.querySelector('.popup-image');
+            const closePopupButton = document.querySelector('.popup-image span');
+
+            // Function to close the popup
+            function closePopup() {
+                popupImage.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            overlay.onclick = closePopup;
+
+            closePopupButton.onclick = closePopup;
+
+            document.addEventListener('click', (event) => {
+                if (event.target === overlay) {
+                    closePopup();
+                }
+            });
+
+        </script>
+   </section>
+   <!-- End Gallery Section -->
+
+   <!-- Contact Section -->
+   <section id="contact">
+    <div class="contact container">
+        <div class="contact-info">
+            <h1>Contact Information</h1>
+            <p>If you have any questions or inquiries, feel free to get in touch with us:</p>
+            <ul>
+                <li><b>Email:</b> cvsubacoor@cvsu.edu.ph</li>
+                <li><b>Phone:</b> (046) 476-5029</li>
+                <li><b>Address:</b> Soldiers Hills IV, Molino VI, Bacoor City, Cavite.</li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h1>Send us a message</h1>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+   <!-- End Contact Section -->
+   <footer>
+    <h1>Social media</h1>
+    <div class="footer container">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/CvSUBacoorCityCampus/" class="facebook-icon" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com/cvsucsg?lang=en" class="twitter-icon" target="_blank"><img src="img/X.png" alt="Twitter"></a>
+            <a href="https://cvsu.edu.ph/bacoor/" class="instagram-icon" target="_blank"><img src="img/logo.png" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </div>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>
